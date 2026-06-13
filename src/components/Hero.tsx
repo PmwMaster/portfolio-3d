@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react'
+import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react'
 import RubiksCube from './RubiksCube'
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
           <h2 className="text-brand-blue font-semibold tracking-wide uppercase text-sm mb-2">
             Desenvolvedor Full-Stack
           </h2>
-          <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-4 text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 text-white">
             Olá, eu sou o{' '}
             <span className="text-gradient">Cristiano</span>
           </h1>
@@ -35,6 +35,14 @@ export default function Hero() {
               className="px-8 py-3 rounded-full border border-slate-700 hover:border-brand-orange hover:text-brand-orange transition-all font-medium text-white"
             >
               Entrar em Contato
+            </a>
+            <a
+              href="/cv-cristiano.pdf"
+              download
+              className="px-8 py-3 rounded-full border border-slate-700 hover:border-brand-blue hover:text-brand-blue transition-all font-medium text-white inline-flex items-center gap-2"
+            >
+              <Download size={16} />
+              Baixar CV
             </a>
           </div>
 

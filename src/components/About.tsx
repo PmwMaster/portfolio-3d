@@ -38,7 +38,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="lg:w-1/2 grid grid-cols-2 gap-6 w-full">
+        <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
           {highlights.map((item, i) => (
             <motion.div
               key={item.label}

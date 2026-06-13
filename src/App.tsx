@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Experience from './components/Experience'
 import TechStack from './components/TechStack'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
@@ -13,12 +14,16 @@ import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
 function App() {
   return (
     <main className="bg-dark-bg/0 min-h-screen text-slate-100 selection:bg-brand-orange selection:text-white antialiased">
+      <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-orange focus:text-black focus:rounded-lg">
+        Pular para o conteúdo
+      </a>
       <CustomCursor />
       <ScrollProgress />
       <ParticlesBackground />
       <Navbar />
       <Hero />
       <About />
+      <Experience />
       <TechStack />
       <Projects />
       <Contact />
