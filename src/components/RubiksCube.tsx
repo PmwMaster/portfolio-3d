@@ -4,14 +4,14 @@ import { OrbitControls, Environment, ContactShadows, Edges } from '@react-three/
 import * as THREE from 'three'
 
 const faceMaterial = new THREE.MeshStandardMaterial({
-  color: '#3a3a3a',
-  roughness: 0.7,
-  metalness: 0.05,
+  color: '#111111',
+  roughness: 0.55,
+  metalness: 0.1,
 })
 
 const innerMaterial = new THREE.MeshStandardMaterial({
-  color: '#1a1a1a',
-  roughness: 0.85,
+  color: '#050505',
+  roughness: 0.8,
   metalness: 0.05,
 })
 
@@ -35,8 +35,8 @@ function Cubelet({ position, index, meshRefs }: any) {
       castShadow
       receiveShadow
     >
-      <boxGeometry args={[0.96, 0.96, 0.96]} />
-      <Edges scale={1.01} color="#555555" threshold={15} />
+      <boxGeometry args={[0.82, 0.82, 0.82]} />
+      <Edges scale={1} color="#333333" lineWidth={1} />
       {mats.map((mat, idx) => (
         <primitive key={idx} attach={`material-${idx}`} object={mat} />
       ))}
@@ -161,6 +161,10 @@ function RubiksGroup() {
   return (
     <group ref={groupRef}>
       <group ref={pivotRef} />
+      <mesh position={[0, 0, 0]} castShadow receiveShadow>
+        <sphereGeometry args={[1.15, 32, 32]} />
+        <meshStandardMaterial color="#030303" roughness={0.9} metalness={0} />
+      </mesh>
       {cubelets}
     </group>
   )
@@ -213,7 +217,7 @@ export default function RubiksCube() {
       <ambientLight intensity={0.5} />
       <directionalLight
         position={[10, 10, 5]}
-        intensity={5}
+        intensity={6}
         color="#ffffff"
         castShadow
         shadow-mapSize-width={1024}
@@ -226,11 +230,11 @@ export default function RubiksCube() {
       />
       <directionalLight
         position={[-6, -4, -6]}
-        intensity={2}
+        intensity={2.5}
         color="#ffffff"
       />
       <DynamicLight />
-      <Environment preset="studio" environmentIntensity={0.3} />
+      <Environment preset="studio" environmentIntensity={0.2} />
       <ContactShadows
         position={[0, -3, 0]}
         opacity={0.5}
