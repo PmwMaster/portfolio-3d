@@ -35,7 +35,7 @@ function Cubelet({ position, index, meshRefs }: any) {
       castShadow
       receiveShadow
     >
-      <boxGeometry args={[0.82, 0.82, 0.82]} />
+      <boxGeometry args={[0.9, 0.9, 0.9]} />
       <Edges scale={1} color="#333333" lineWidth={1} />
       {mats.map((mat, idx) => (
         <primitive key={idx} attach={`material-${idx}`} object={mat} />
