@@ -12,15 +12,15 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-brand-blue font-semibold tracking-wide uppercase text-sm mb-2">
-            Full-Stack Developer
+            Desenvolvedor Full-Stack
           </h2>
           <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-4 text-white">
-            Hello, I'm{' '}
+            Olá, eu sou o{' '}
             <span className="text-gradient">Cristiano</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl max-w-lg mb-8">
-            I craft high-performance web applications with modern technologies,
-            blending clean code with immersive 3D experiences.
+            Crio aplicações web de alta performance com tecnologias modernas,
+            unindo código limpo a experiências 3D imersivas.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -28,13 +28,13 @@ export default function Hero() {
               href="#projects"
               className="px-8 py-3 rounded-full bg-gradient-to-r from-brand-orange to-brand-yellow text-black font-semibold hover:scale-105 transition-transform"
             >
-              View Projects
+              Ver Projetos
             </a>
             <a
               href="#contact"
               className="px-8 py-3 rounded-full border border-slate-700 hover:border-brand-orange hover:text-brand-orange transition-all font-medium text-white"
             >
-              Get in Touch
+              Entrar em Contato
             </a>
           </div>
 

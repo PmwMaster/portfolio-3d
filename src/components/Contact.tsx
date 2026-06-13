@@ -14,15 +14,15 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <h2 className="text-brand-blue font-semibold tracking-wide uppercase text-sm mb-2">
-            Get in Touch
+            Entre em Contato
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold text-white mb-4">
-            Let&apos;s work{' '}
-            <span className="text-gradient">together.</span>
+            Vamos trabalhar{' '}
+            <span className="text-gradient">juntos.</span>
           </h3>
           <p className="text-slate-400 text-lg max-w-lg mx-auto">
-            Have a project in mind or just want to chat? Send me a message and
-            I&apos;ll get back to you as soon as possible.
+            Tem um projeto em mente ou quer trocar uma ideia? Me envie uma
+            mensagem que responderei o mais rápido possível.
           </p>
         </motion.div>
 
@@ -42,28 +42,28 @@ export default function Contact() {
               type="text"
               name="name"
               required
-              placeholder="Your Name"
+              placeholder="Seu Nome"
               className="w-full bg-dark-bg/50 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-orange transition-all"
             />
             <input
               type="email"
               name="email"
               required
-              placeholder="Your Email"
+              placeholder="Seu Email"
               className="w-full bg-dark-bg/50 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-orange transition-all"
             />
             <textarea
               name="message"
               required
               rows={5}
-              placeholder="Your Message..."
+              placeholder="Sua Mensagem..."
               className="w-full bg-dark-bg/50 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-orange transition-all resize-none"
             />
             <button
               type="submit"
               className="w-full py-4 rounded-xl font-bold text-black bg-gradient-to-r from-brand-orange to-brand-yellow hover:scale-[1.02] transition-transform"
             >
-              Send Message
+              Enviar Mensagem
             </button>
           </motion.form>
 
@@ -113,7 +113,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-slate-400 text-sm">LinkedIn</p>
-                <p className="text-white font-medium">Connect with me</p>
+                <p className="text-white font-medium">Conecte-se comigo</p>
               </div>
             </a>
 
@@ -122,8 +122,8 @@ export default function Contact() {
                 <MapPin size={22} />
               </div>
               <div>
-                <p className="text-slate-400 text-sm">Location</p>
-                <p className="text-white font-medium">Available Worldwide</p>
+                <p className="text-slate-400 text-sm">Localização</p>
+                <p className="text-white font-medium">Disponível Worldwide</p>
               </div>
             </div>
           </motion.div>

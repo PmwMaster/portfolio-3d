@@ -30,7 +30,7 @@ export default function TechStack() {
             Tech Stack
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold text-white">
-            Technologies I Work With
+            Tecnologias que Utilizo
           </h3>
         </motion.div>
 

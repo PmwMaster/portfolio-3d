@@ -4,8 +4,8 @@ import { Code2, Layout, Server, Cpu } from 'lucide-react'
 const highlights = [
   { icon: <Layout className="w-6 h-6" />, label: 'Frontend', desc: 'React, Next.js, Tailwind' },
   { icon: <Server className="w-6 h-6" />, label: 'Backend', desc: 'Node.js, Python, SQL' },
-  { icon: <Code2 className="w-6 h-6" />, label: 'Clean Code', desc: 'SOLID, Design Patterns' },
-  { icon: <Cpu className="w-6 h-6" />, label: '3D & Graphics', desc: 'Three.js, WebGL' },
+  { icon: <Code2 className="w-6 h-6" />, label: 'Código Limpo', desc: 'SOLID, Design Patterns' },
+  { icon: <Cpu className="w-6 h-6" />, label: '3D & Gráficos', desc: 'Three.js, WebGL' },
 ]
 
 export default function About() {
@@ -20,21 +20,21 @@ export default function About() {
           className="lg:w-1/2"
         >
           <h2 className="text-brand-yellow font-semibold tracking-wide uppercase text-sm mb-2">
-            About Me
+            Sobre Mim
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
-            Building the web,{' '}
-            <span className="text-gradient">one pixel at a time.</span>
+            Construindo a web,{' '}
+            <span className="text-gradient">um pixel por vez.</span>
           </h3>
           <p className="text-slate-400 text-lg mb-6 leading-relaxed">
-            I&apos;m a full-stack developer passionate about creating rich,
-            interactive experiences on the web. I combine modern frontend
-            frameworks with solid backend architecture to deliver applications
-            that are fast, beautiful, and scalable.
+            Sou um desenvolvedor full-stack apaixonado por criar experiências
+            ricas e interativas na web. Combino frameworks modernos de frontend
+            com arquitetura sólida de backend para entregar aplicações rápidas,
+            bonitas e escaláveis.
           </p>
           <p className="text-slate-500 text-base leading-relaxed">
-            When I&apos;m not coding, you&apos;ll find me exploring 3D graphics,
-            contributing to open source, or experimenting with new technologies.
+            Quando não estou programando, pode me encontrar explorando gráficos 3D,
+            contribuindo com open source ou experimentando novas tecnologias.
           </p>
         </motion.div>
 

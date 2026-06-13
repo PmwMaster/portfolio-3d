@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '#about', label: 'About' },
+  { href: '#about', label: 'Sobre' },
   { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#projects', label: 'Projetos' },
+  { href: '#contact', label: 'Contato' },
 ]
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
       <button
         onClick={() => setOpen(!open)}
         className="md:hidden text-white p-1"
-        aria-label="Toggle menu"
+        aria-label="Abrir menu"
       >
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>

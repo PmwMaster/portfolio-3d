@@ -23,7 +23,7 @@ function App() {
       <footer className="w-full py-10 px-6 border-t border-slate-800 bg-dark-bg">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-slate-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} Cristiano. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Cristiano. Todos os direitos reservados.</p>
           </div>
 
           <div className="flex items-center gap-4">
@@ -58,7 +58,7 @@ function App() {
             href="#"
             className="flex items-center gap-2 text-slate-500 hover:text-brand-orange transition-colors text-sm"
           >
-            Back to top <ArrowUp size={14} />
+            Voltar ao topo <ArrowUp size={14} />
           </a>
         </div>
       </footer>

@@ -5,21 +5,21 @@ import TiltCard from './TiltCard'
 const projects = [
   {
     title: 'Portfolio 3D',
-    desc: 'Interactive personal portfolio featuring a 3D Rubik\'s cube with real-time lighting and particle effects.',
+    desc: 'Portfolio pessoal interativo com cubo mágico 3D, iluminação dinâmica em tempo real e efeitos de partículas.',
     tags: ['React', 'Three.js', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/PmwMaster/portfolio-3d',
     gradient: 'from-brand-orange/40 to-brand-yellow/20',
   },
   {
     title: 'E-Commerce API',
-    desc: 'RESTful API for e-commerce with authentication, payment integration and order management.',
+    desc: 'API RESTful para e-commerce com autenticação, integração de pagamentos e gestão de pedidos.',
     tags: ['Node.js', 'PostgreSQL', 'Docker', 'Stripe'],
     github: '#',
     gradient: 'from-brand-blue/40 to-purple-600/20',
   },
   {
     title: 'Dashboard Analytics',
-    desc: 'Real-time analytics dashboard with interactive charts, data filtering and export capabilities.',
+    desc: 'Dashboard de análises em tempo real com gráficos interativos, filtros de dados e exportação.',
     tags: ['React', 'TypeScript', 'Tailwind', 'WebSocket'],
     github: '#',
     gradient: 'from-green-500/30 to-brand-blue/20',
@@ -37,10 +37,10 @@ export default function Projects() {
           className="mb-16"
         >
           <h2 className="text-brand-blue font-semibold tracking-wide uppercase text-sm mb-2">
-            Portfolio
+            Portfólio
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold text-white">
-            Featured Projects
+            Projetos em Destaque
           </h3>
         </motion.div>
 
