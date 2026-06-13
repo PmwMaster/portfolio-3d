@@ -12,9 +12,26 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const sections = links.map((l) => document.querySelector(l.href)).filter(Boolean) as HTMLElement[]
+
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+
+      const scrollPos = window.scrollY + window.innerHeight / 3
+      for (const section of sections) {
+        if (!section) continue
+        const { offsetTop, offsetHeight } = section
+        if (scrollPos >= offsetTop && scrollPos < offsetTop + offsetHeight) {
+          setActiveSection(section.id)
+          return
+        }
+      }
+      if (window.scrollY < 200) setActiveSection('')
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -37,7 +54,11 @@ export default function Navbar() {
           <a
             key={l.href}
             href={l.href}
-            className="text-slate-300 hover:text-white transition-colors"
+            className={`transition-colors ${
+              activeSection === l.href.slice(1)
+                ? 'text-brand-orange'
+                : 'text-slate-300 hover:text-white'
+            }`}
           >
             {l.label}
           </a>
@@ -66,7 +87,11 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-slate-300 hover:text-white transition-colors text-lg font-medium"
+                  className={`transition-colors text-lg font-medium ${
+                    activeSection === l.href.slice(1)
+                      ? 'text-brand-orange'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
                 >
                   {l.label}
                 </a>
