@@ -1,96 +1,90 @@
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 
 function Helmet() {
-  const domeMat = new THREE.MeshStandardMaterial({ color: '#0d0d0d', roughness: 0.35, metalness: 0.5 })
-  const darkMat = new THREE.MeshStandardMaterial({ color: '#0a0a0a', roughness: 0.3, metalness: 0.55 })
-  const faceMat = new THREE.MeshStandardMaterial({ color: '#111111', roughness: 0.3, metalness: 0.7 })
-  const grillMat = new THREE.MeshStandardMaterial({ color: '#222222', roughness: 0.5, metalness: 0.4 })
-  const eyeMat = new THREE.MeshStandardMaterial({ color: '#ff1a1a', emissive: '#ff0000', emissiveIntensity: 4, roughness: 0.1 })
-  const glowMat = new THREE.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0.4 })
-
-  return (
-    <group>
-      {/* Dome top */}
-      <mesh geometry={new THREE.SphereGeometry(0.95, 48, 48, 0, Math.PI * 2, 0, Math.PI / 2.4)} material={domeMat} position={[0, 1.15, 0]} />
-
-      {/* Dome band */}
-      <mesh geometry={new THREE.CylinderGeometry(1.0, 1.05, 0.12, 48)} material={darkMat} position={[0, 0.72, 0]} />
-
-      {/* Dome flare */}
-      <mesh geometry={new THREE.CylinderGeometry(1.05, 1.0, 0.4, 48)} material={darkMat} position={[0, 0.52, 0]} />
-
-      {/* Face cheek area */}
-      <mesh geometry={new THREE.BoxGeometry(1.0, 0.65, 0.25)} material={faceMat} position={[0, 0.3, 0.9]} />
-
-      {/* Nose ridge */}
-      <mesh geometry={new THREE.BoxGeometry(0.18, 0.4, 0.15)} material={faceMat} position={[0, 0.55, 0.95]} />
-
-      {/* Lower jaw */}
-      <mesh geometry={new THREE.BoxGeometry(0.7, 0.5, 0.3)} material={faceMat} position={[0, -0.05, 0.95]} />
-
-      {/* Chin */}
-      <mesh geometry={new THREE.ConeGeometry(0.42, 0.45, 4, 1)} material={faceMat} position={[0, -0.5, 1.05]} rotation={[0.2, 0, 0]} />
-
-      {/* Mouth grill bars */}
-      <mesh geometry={new THREE.BoxGeometry(0.55, 0.04, 0.08)} material={grillMat} position={[0, -0.15, 1.1]} />
-      <mesh geometry={new THREE.BoxGeometry(0.55, 0.04, 0.08)} material={grillMat} position={[0, -0.05, 1.1]} />
-      <mesh geometry={new THREE.BoxGeometry(0.55, 0.04, 0.08)} material={grillMat} position={[0, 0.05, 1.1]} />
-
-      {/* Mouth vertical bar */}
-      <mesh geometry={new THREE.BoxGeometry(0.04, 0.25, 0.08)} material={grillMat} position={[0, 0, 1.12]} />
-
-      {/* Left eye */}
-      <mesh geometry={new THREE.CylinderGeometry(0.1, 0.1, 0.06, 24)} material={eyeMat} position={[-0.2, 0.48, 1.02]} />
-      <mesh geometry={new THREE.SphereGeometry(0.08, 16, 16)} material={glowMat} position={[-0.2, 0.48, 1.05]} />
-
-      {/* Right eye */}
-      <mesh geometry={new THREE.CylinderGeometry(0.1, 0.1, 0.06, 24)} material={eyeMat} position={[0.2, 0.48, 1.02]} />
-      <mesh geometry={new THREE.SphereGeometry(0.08, 16, 16)} material={glowMat} position={[0.2, 0.48, 1.05]} />
-
-      {/* Neck */}
-      <mesh geometry={new THREE.CylinderGeometry(0.5, 0.55, 0.8, 32)} material={darkMat} position={[0, -0.9, 0]} />
-
-      {/* Neck ring */}
-      <mesh geometry={new THREE.TorusGeometry(0.55, 0.08, 16, 32)} material={faceMat} position={[0, -1.3, 0]} />
-
-      {/* Shoulders */}
-      <mesh geometry={new THREE.CylinderGeometry(0.4, 0.8, 0.3, 32)} material={darkMat} position={[0, -1.55, 0]} />
-    </group>
-  )
-}
-
-function SaberGlow() {
-  const lightRef = useRef<THREE.PointLight>(null)
-
-  useFrame(({ clock }) => {
-    if (lightRef.current) {
-      lightRef.current.intensity = 5 + Math.sin(clock.elapsedTime * 4) * 2
-    }
-  })
-
-  return <pointLight ref={lightRef} position={[2.5, 0.5, -1]} intensity={5} color="#ff2020" distance={10} decay={2} />
-}
-
-function VaderModel() {
   const groupRef = useRef<THREE.Group>(null)
-  const targetRot = useRef({ x: 0, y: 0 })
 
-  useFrame(({ mouse }, delta) => {
+  useFrame((_, delta) => {
     if (groupRef.current) {
-      targetRot.current.y = mouse.x * 0.5
-      targetRot.current.x = mouse.y * 0.25
-
-      groupRef.current.rotation.y += (targetRot.current.y - groupRef.current.rotation.y) * delta * 3
-      groupRef.current.rotation.x += (targetRot.current.x - groupRef.current.rotation.x) * delta * 3
+      groupRef.current.rotation.y += delta * 0.3
     }
   })
 
   return (
-    <group ref={groupRef} position={[0, 0.3, 0]}>
-      <Helmet />
+    <group ref={groupRef}>
+      {/* Dome */}
+      <mesh position={[0, 1.1, 0]}>
+        <sphereGeometry args={[0.9, 48, 48, 0, Math.PI * 2, 0, Math.PI / 2.3]} />
+        <meshStandardMaterial color="#0d0d0d" roughness={0.3} metalness={0.5} />
+      </mesh>
+      {/* Dome rim */}
+      <mesh position={[0, 0.68, 0]}>
+        <cylinderGeometry args={[0.98, 1.02, 0.1, 48]} />
+        <meshStandardMaterial color="#080808" roughness={0.25} metalness={0.6} />
+      </mesh>
+      {/* Dome skirt */}
+      <mesh position={[0, 0.48, 0]}>
+        <cylinderGeometry args={[1.02, 0.95, 0.45, 48]} />
+        <meshStandardMaterial color="#080808" roughness={0.25} metalness={0.6} />
+      </mesh>
+      {/* Face upper */}
+      <mesh position={[0, 0.28, 0.85]}>
+        <boxGeometry args={[0.95, 0.6, 0.22]} />
+        <meshStandardMaterial color="#111111" roughness={0.28} metalness={0.7} />
+      </mesh>
+      {/* Nose */}
+      <mesh position={[0, 0.52, 0.92]}>
+        <boxGeometry args={[0.16, 0.38, 0.12]} />
+        <meshStandardMaterial color="#0d0d0d" roughness={0.28} metalness={0.6} />
+      </mesh>
+      {/* Jaw */}
+      <mesh position={[0, -0.05, 0.9]}>
+        <boxGeometry args={[0.68, 0.48, 0.28]} />
+        <meshStandardMaterial color="#111111" roughness={0.28} metalness={0.7} />
+      </mesh>
+      {/* Chin */}
+      <mesh position={[0, -0.48, 1.0]} rotation={[0.2, 0, 0]}>
+        <coneGeometry args={[0.4, 0.42, 4, 1]} />
+        <meshStandardMaterial color="#0d0d0d" roughness={0.28} metalness={0.65} />
+      </mesh>
+      {/* Grill bars */}
+      {[-0.13, -0.04, 0.05].map((y) => (
+        <mesh key={y} position={[0, y, 1.05]}>
+          <boxGeometry args={[0.5, 0.035, 0.07]} />
+          <meshStandardMaterial color="#1a1a1a" roughness={0.5} metalness={0.4} />
+        </mesh>
+      ))}
+      {/* Vertical grill */}
+      <mesh position={[0, 0, 1.07]}>
+        <boxGeometry args={[0.035, 0.22, 0.07]} />
+        <meshStandardMaterial color="#1a1a1a" roughness={0.5} metalness={0.4} />
+      </mesh>
+      {/* Left eye */}
+      <mesh position={[-0.19, 0.44, 0.97]}>
+        <cylinderGeometry args={[0.09, 0.09, 0.05, 20]} />
+        <meshStandardMaterial color="#ff1a1a" emissive="#ff0000" emissiveIntensity={5} roughness={0.1} />
+      </mesh>
+      {/* Right eye */}
+      <mesh position={[0.19, 0.44, 0.97]}>
+        <cylinderGeometry args={[0.09, 0.09, 0.05, 20]} />
+        <meshStandardMaterial color="#ff1a1a" emissive="#ff0000" emissiveIntensity={5} roughness={0.1} />
+      </mesh>
+      {/* Neck */}
+      <mesh position={[0, -0.85, 0]}>
+        <cylinderGeometry args={[0.48, 0.52, 0.75, 32]} />
+        <meshStandardMaterial color="#080808" roughness={0.4} metalness={0.3} />
+      </mesh>
+      {/* Neck ring */}
+      <mesh position={[0, -1.22, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[0.52, 0.07, 12, 32]} />
+        <meshStandardMaterial color="#111111" roughness={0.3} metalness={0.6} />
+      </mesh>
+      {/* Shoulders */}
+      <mesh position={[0, -1.48, 0]}>
+        <cylinderGeometry args={[0.38, 0.75, 0.28, 32]} />
+        <meshStandardMaterial color="#080808" roughness={0.4} metalness={0.4} />
+      </mesh>
     </group>
   )
 }
@@ -98,17 +92,15 @@ function VaderModel() {
 export default function DarthVader() {
   return (
     <Canvas
-      camera={{ position: [0, 0.3, 3.8], fov: 40 }}
+      camera={{ position: [0, 0.2, 3.5], fov: 42 }}
       gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.1 }}
     >
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 3, 3]} intensity={2.5} color="#ffffff" />
-      <directionalLight position={[-3, 2, -2]} intensity={1.0} color="#4466aa" />
-      <directionalLight position={[0, -1, -3]} intensity={0.6} color="#332244" />
-      <SaberGlow />
-      <pointLight position={[-2, 1, 2]} intensity={2} color="#ff6644" distance={6} />
-      <ContactShadows position={[0, -1.8, 0]} opacity={0.4} scale={5} blur={2} far={4} />
-      <VaderModel />
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[4, 3, 3]} intensity={3} color="#ffffff" />
+      <directionalLight position={[-3, 1, -2]} intensity={1.2} color="#4466aa" />
+      <pointLight position={[2, 0.5, -1]} intensity={6} color="#ff2020" distance={8} decay={2} />
+      <pointLight position={[-2, 1, 2]} intensity={2} color="#ff5533" distance={6} />
+      <Helmet />
     </Canvas>
   )
 }
