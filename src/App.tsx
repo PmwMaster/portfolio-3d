@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import CustomCursor from './components/CustomCursor'
 import ParticlesBackground from './components/ParticlesBackground'
 import ScrollProgress from './components/ScrollProgress'
+import ScrollToTop from './components/ScrollToTop'
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <TechStack />
       <Projects />
       <Contact />
+      <ScrollToTop />
 
       <footer className="w-full py-10 px-6 border-t border-slate-800 bg-dark-bg">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
