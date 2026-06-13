@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react'
-import GeometricSphere from './GeometricSphere'
+import DarthVader from './DarthVader'
 
 export default function Hero() {
   return (
@@ -78,7 +78,7 @@ export default function Hero() {
 
       <div className="lg:w-1/2 w-full h-[50vh] lg:h-[80vh] flex items-center justify-center relative mt-12 lg:mt-0 cursor-grab active:cursor-grabbing">
         <div className="w-full h-full absolute inset-0">
-          <GeometricSphere />
+          <DarthVader />
         </div>
       </div>
 
