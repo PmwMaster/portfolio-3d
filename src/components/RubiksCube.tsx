@@ -3,19 +3,22 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Environment, ContactShadows, Edges } from '@react-three/drei'
 import * as THREE from 'three'
 
-const faceMaterial = new THREE.MeshStandardMaterial({
-  color: '#000000',
-  roughness: 1.0,
-  metalness: 0,
-})
+const faceMaterial = [
+  new THREE.MeshStandardMaterial({ color: '#ff3b30', roughness: 0.2, metalness: 0.1 }),
+  new THREE.MeshStandardMaterial({ color: '#ff9500', roughness: 0.2, metalness: 0.1 }),
+  new THREE.MeshStandardMaterial({ color: '#facc15', roughness: 0.2, metalness: 0.1 }),
+  new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.2, metalness: 0.1 }),
+  new THREE.MeshStandardMaterial({ color: '#34c759', roughness: 0.2, metalness: 0.1 }),
+  new THREE.MeshStandardMaterial({ color: '#007aff', roughness: 0.2, metalness: 0.1 }),
+]
 
 const innerMaterial = new THREE.MeshStandardMaterial({
-  color: '#000000',
-  roughness: 1.0,
-  metalness: 0,
+  color: '#111111',
+  roughness: 0.7,
+  metalness: 0.05,
 })
 
-const materials = [faceMaterial, faceMaterial, faceMaterial, faceMaterial, faceMaterial, faceMaterial]
+const materials = faceMaterial
 
 function Cubelet({ position, index, meshRefs }: any) {
   const [x, y, z] = position
@@ -212,12 +215,12 @@ export default function RubiksCube() {
     <Canvas
       shadows
       camera={{ position: [5, 5, 5], fov: 45 }}
-      gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.0 }}
+      gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
     >
-      <ambientLight intensity={0.15} />
+      <ambientLight intensity={0.6} />
       <directionalLight
         position={[10, 10, 5]}
-        intensity={3}
+        intensity={4}
         color="#ffffff"
         castShadow
         shadow-mapSize-width={1024}
@@ -230,11 +233,11 @@ export default function RubiksCube() {
       />
       <directionalLight
         position={[-6, -4, -6]}
-        intensity={1}
+        intensity={2}
         color="#ffffff"
       />
       <DynamicLight />
-      <Environment preset="studio" environmentIntensity={0.1} />
+      <Environment preset="studio" environmentIntensity={0.6} />
       <ContactShadows
         position={[0, -3, 0]}
         opacity={0.5}

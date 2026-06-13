@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react'
-import DarthVader from './DarthVader'
+import RubiksCube from './RubiksCube'
 
 export default function Hero() {
   return (
