@@ -6,12 +6,14 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import CustomCursor from './components/CustomCursor'
 import ParticlesBackground from './components/ParticlesBackground'
+import ScrollProgress from './components/ScrollProgress'
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
 
 function App() {
   return (
     <main className="bg-dark-bg/0 min-h-screen text-slate-100 selection:bg-brand-orange selection:text-white antialiased">
       <CustomCursor />
+      <ScrollProgress />
       <ParticlesBackground />
       <Navbar />
       <Hero />
