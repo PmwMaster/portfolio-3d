@@ -3,15 +3,24 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
+const blackFaceMaterial = new THREE.MeshStandardMaterial({
+  color: '#0a0a0a',
+  roughness: 0.15,
+  metalness: 0.6,
+})
+const blackMaterial = new THREE.MeshStandardMaterial({
+  color: '#050505',
+  roughness: 0.25,
+  metalness: 0.4,
+})
 const materials = [
-  new THREE.MeshStandardMaterial({ color: '#ff3b30', roughness: 0.1 }), // Right
-  new THREE.MeshStandardMaterial({ color: '#ff9500', roughness: 0.1 }), // Left
-  new THREE.MeshStandardMaterial({ color: '#facc15', roughness: 0.1 }), // Top
-  new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.1 }), // Bottom
-  new THREE.MeshStandardMaterial({ color: '#34c759', roughness: 0.1 }), // Front
-  new THREE.MeshStandardMaterial({ color: '#007aff', roughness: 0.1 }), // Back
+  blackFaceMaterial, // Right
+  blackFaceMaterial, // Left
+  blackFaceMaterial, // Top
+  blackFaceMaterial, // Bottom
+  blackFaceMaterial, // Front
+  blackFaceMaterial, // Back
 ]
-const blackMaterial = new THREE.MeshStandardMaterial({ color: '#111111', roughness: 0.8 })
 
 function Cubelet({ position, index, meshRefs }: any) {
   const [x, y, z] = position
@@ -154,24 +163,34 @@ function RubiksGroup() {
 
 function DynamicLight() {
   const lightRef = useRef<THREE.PointLight>(null)
+  const light2Ref = useRef<THREE.PointLight>(null)
   
   useFrame(({ mouse }) => {
     if (lightRef.current) {
-      // Light follows mouse bounds from -20 to +20 in physical space
-      lightRef.current.position.x = mouse.x * 20
-      lightRef.current.position.y = mouse.y * 20
+      lightRef.current.position.x = mouse.x * 15
+      lightRef.current.position.y = mouse.y * 15
+    }
+    if (light2Ref.current) {
+      light2Ref.current.position.x = -mouse.x * 12
+      light2Ref.current.position.y = -mouse.y * 12
     }
   })
 
-  return <pointLight ref={lightRef} position={[0, 0, 8]} intensity={3} color="#f97316" distance={50} decay={1.5} />
+  return (
+    <>
+      <pointLight ref={lightRef} position={[0, 0, 8]} intensity={5} color="#f97316" distance={40} decay={1.5} />
+      <pointLight ref={light2Ref} position={[0, 0, -4]} intensity={3} color="#3b82f6" distance={35} decay={1.5} />
+    </>
+  )
 }
 
 export default function RubiksCube() {
   return (
     <Canvas camera={{ position: [5, 5, 5], fov: 45 }}>
-      <ambientLight intensity={0.9} />
-      <directionalLight position={[10, 10, 5]} intensity={2.5} />
-      <directionalLight position={[-10, -10, -5]} intensity={0.8} />
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[10, 10, 5]} intensity={4} color="#ffffff" />
+      <directionalLight position={[-10, -10, -5]} intensity={1.2} color="#ffffff" />
+      <directionalLight position={[0, -8, 3]} intensity={1} color="#f97316" />
       <DynamicLight />
       <OrbitControls enableZoom={false} enablePan={false} />
       <RubiksGroup />
