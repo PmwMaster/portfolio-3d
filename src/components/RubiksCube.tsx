@@ -4,15 +4,15 @@ import { OrbitControls, Environment, ContactShadows, Edges } from '@react-three/
 import * as THREE from 'three'
 
 const faceMaterial = new THREE.MeshStandardMaterial({
-  color: '#111111',
-  roughness: 0.55,
-  metalness: 0.1,
+  color: '#000000',
+  roughness: 1.0,
+  metalness: 0,
 })
 
 const innerMaterial = new THREE.MeshStandardMaterial({
-  color: '#050505',
-  roughness: 0.8,
-  metalness: 0.05,
+  color: '#000000',
+  roughness: 1.0,
+  metalness: 0,
 })
 
 const materials = [faceMaterial, faceMaterial, faceMaterial, faceMaterial, faceMaterial, faceMaterial]
@@ -163,7 +163,7 @@ function RubiksGroup() {
       <group ref={pivotRef} />
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
         <sphereGeometry args={[1.15, 32, 32]} />
-        <meshStandardMaterial color="#030303" roughness={0.9} metalness={0} />
+        <meshStandardMaterial color="#000000" roughness={1} metalness={0} />
       </mesh>
       {cubelets}
     </group>
@@ -190,7 +190,7 @@ function DynamicLight() {
       <pointLight
         ref={lightRef}
         position={[0, 0, 8]}
-        intensity={10}
+        intensity={6}
         color="#f97316"
         distance={30}
         decay={1.5}
@@ -198,7 +198,7 @@ function DynamicLight() {
       <pointLight
         ref={light2Ref}
         position={[0, 0, -4]}
-        intensity={6}
+        intensity={3}
         color="#3b82f6"
         distance={25}
         decay={1.5}
@@ -212,12 +212,12 @@ export default function RubiksCube() {
     <Canvas
       shadows
       camera={{ position: [5, 5, 5], fov: 45 }}
-      gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.4 }}
+      gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.0 }}
     >
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.15} />
       <directionalLight
         position={[10, 10, 5]}
-        intensity={6}
+        intensity={3}
         color="#ffffff"
         castShadow
         shadow-mapSize-width={1024}
@@ -230,11 +230,11 @@ export default function RubiksCube() {
       />
       <directionalLight
         position={[-6, -4, -6]}
-        intensity={2.5}
+        intensity={1}
         color="#ffffff"
       />
       <DynamicLight />
-      <Environment preset="studio" environmentIntensity={0.2} />
+      <Environment preset="studio" environmentIntensity={0.1} />
       <ContactShadows
         position={[0, -3, 0]}
         opacity={0.5}
