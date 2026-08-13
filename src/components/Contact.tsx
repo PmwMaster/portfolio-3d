@@ -36,7 +36,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="flex flex-col gap-5"
           >
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY || 'YOUR_WEB3FORMS_KEY'} />
 
             <input
               type="text"
@@ -103,7 +103,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/cristiano-xavier-426471342/"
               target="_blank"
               rel="noreferrer"
               className="glass p-5 rounded-2xl border border-slate-800 hover:border-brand-orange/50 transition-all flex items-center gap-4 group"

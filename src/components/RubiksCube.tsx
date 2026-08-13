@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Environment, ContactShadows, Edges } from '@react-three/drei'
 import * as THREE from 'three'
@@ -20,7 +20,13 @@ const innerMaterial = new THREE.MeshStandardMaterial({
 
 const materials = faceMaterial
 
-function Cubelet({ position, index, meshRefs }: any) {
+interface CubeletProps {
+  position: [number, number, number]
+  index: number
+  meshRefs: React.RefObject<(THREE.Mesh | null)[]>
+}
+
+function Cubelet({ position, index, meshRefs }: CubeletProps) {
   const [x, y, z] = position
   const mats = [
     x === 1 ? materials[0] : innerMaterial,
@@ -31,10 +37,13 @@ function Cubelet({ position, index, meshRefs }: any) {
     z === -1 ? materials[5] : innerMaterial,
   ]
 
+  // eslint-disable-next-line react-hooks/immutability
+  const setRef = (el: THREE.Mesh | null) => { meshRefs.current[index] = el }
+
   return (
     <mesh
       position={position}
-      ref={(el) => (meshRefs.current[index] = el)}
+      ref={setRef}
       castShadow
       receiveShadow
     >
@@ -212,41 +221,47 @@ function DynamicLight() {
 
 export default function RubiksCube() {
   return (
-    <Canvas
-      shadows
-      camera={{ position: [5, 5, 5], fov: 45 }}
-      gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
-    >
-      <ambientLight intensity={0.6} />
-      <directionalLight
-        position={[10, 10, 5]}
-        intensity={4}
-        color="#ffffff"
-        castShadow
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        shadow-camera-far={50}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
-      />
-      <directionalLight
-        position={[-6, -4, -6]}
-        intensity={2}
-        color="#ffffff"
-      />
-      <DynamicLight />
-      <Environment preset="studio" environmentIntensity={0.6} />
-      <ContactShadows
-        position={[0, -3, 0]}
-        opacity={0.5}
-        scale={10}
-        blur={2}
-        far={6}
-      />
-      <OrbitControls enableZoom={false} enablePan={false} />
-      <RubiksGroup />
-    </Canvas>
+    <Suspense fallback={
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-brand-orange border-t-transparent rounded-full animate-spin" />
+      </div>
+    }>
+      <Canvas
+        shadows
+        camera={{ position: [5, 5, 5], fov: 45 }}
+        gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
+      >
+        <ambientLight intensity={0.6} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={4}
+          color="#ffffff"
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={50}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
+        />
+        <directionalLight
+          position={[-6, -4, -6]}
+          intensity={2}
+          color="#ffffff"
+        />
+        <DynamicLight />
+        <Environment preset="studio" environmentIntensity={0.6} />
+        <ContactShadows
+          position={[0, -3, 0]}
+          opacity={0.5}
+          scale={10}
+          blur={2}
+          far={6}
+        />
+        <OrbitControls enableZoom={false} enablePan={false} />
+        <RubiksGroup />
+      </Canvas>
+    </Suspense>
   )
 }

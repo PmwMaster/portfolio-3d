@@ -4,25 +4,36 @@ import TiltCard from './TiltCard'
 
 const projects = [
   {
-    title: 'Portfolio 3D',
-    desc: 'Portfolio pessoal interativo com cubo mágico 3D, iluminação dinâmica em tempo real e efeitos de partículas.',
-    tags: ['React', 'Three.js', 'TypeScript', 'Tailwind'],
-    github: 'https://github.com/PmwMaster/portfolio-3d',
+    title: 'SGI-ATI',
+    desc: 'Sistema corporativo de gestão de inventário e controle de ativos com autenticação, CRUD completo, dashboard e rastreabilidade de equipamentos.',
+    tags: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
+    github: 'https://github.com/JoaoPOPaulino/SGI_ATI',
+    live: 'https://sgi-ati.vercel.app',
     gradient: 'from-brand-orange/40 to-brand-yellow/20',
   },
   {
-    title: 'E-Commerce API',
-    desc: 'API RESTful para e-commerce com autenticação, integração de pagamentos e gestão de pedidos.',
-    tags: ['Node.js', 'PostgreSQL', 'Docker', 'Stripe'],
-    github: '#',
+    title: 'Marins Advocacia',
+    desc: 'Landing page premium para escritório de advocacia criminal com funil direto para WhatsApp, animações cinematográficas e SEO otimizado. Em produção.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'AOS'],
+    github: 'https://github.com/PmwMaster/MarinsAdvocacia',
+    live: 'http://drsandromarins.com.br',
     gradient: 'from-brand-blue/40 to-purple-600/20',
   },
   {
-    title: 'Dashboard Analytics',
-    desc: 'Dashboard de análises em tempo real com gráficos interativos, filtros de dados e exportação.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'WebSocket'],
-    github: '#',
+    title: 'Vortex Audio Labs',
+    desc: 'Plataforma de e-commerce para periféricos de áudio com carrinho, checkout Stripe, autenticação via Supabase e catálogo interativo.',
+    tags: ['React', 'TypeScript', 'Supabase', 'Stripe'],
+    github: 'https://github.com/PmwMaster/Vortex',
+    live: 'https://office-x-jet.vercel.app',
     gradient: 'from-green-500/30 to-brand-blue/20',
+  },
+  {
+    title: 'HeroBurguer',
+    desc: 'Landing page premium para hamburgueria com hero cinematográfico via Canvas API, cardápio interativo com scroll snap e simulação de pedidos.',
+    tags: ['HTML', 'SCSS', 'JavaScript', 'Canvas API'],
+    github: 'https://github.com/PmwMaster/HeroBurguer',
+    live: 'https://pmwmaster.github.io/HeroBurguer/',
+    gradient: 'from-red-500/30 to-brand-yellow/20',
   },
 ]
 
@@ -44,7 +55,7 @@ export default function Projects() {
           </h3>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((p, i) => (
             <motion.div
               key={p.title}
@@ -69,7 +80,9 @@ export default function Projects() {
                       <Github size={20} />
                     </a>
                     <a
-                      href="#"
+                      href={p.live}
+                      target="_blank"
+                      rel="noreferrer"
                       className="p-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all"
                     >
                       <ExternalLink size={20} />

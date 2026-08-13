@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import TechStack from './components/TechStack'
+import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import CustomCursor from './components/CustomCursor'
@@ -23,6 +24,7 @@ function App() {
       <Hero />
       <About />
       <TechStack />
+      <Experience />
       <Projects />
       <Contact />
       <ScrollToTop />
@@ -44,7 +46,7 @@ function App() {
               <Github size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/cristiano-xavier-426471342/"
               target="_blank"
               rel="noreferrer"
               className="text-slate-500 hover:text-white transition-colors"

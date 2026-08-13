@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react'
+import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react'
 import RubiksCube from './RubiksCube'
 
 export default function Hero() {
@@ -36,14 +36,6 @@ export default function Hero() {
             >
               Entrar em Contato
             </a>
-            <a
-              href="/cv-cristiano.pdf"
-              download
-              className="px-8 py-3 rounded-full border border-slate-700 hover:border-brand-blue hover:text-brand-blue transition-all font-medium text-white inline-flex items-center gap-2"
-            >
-              <Download size={16} />
-              Baixar CV
-            </a>
           </div>
 
           <div className="flex gap-4 mt-6">
@@ -57,7 +49,7 @@ export default function Hero() {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/cristiano-xavier-426471342/"
               target="_blank"
               rel="noreferrer"
               className="p-2.5 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
