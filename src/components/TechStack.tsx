@@ -18,7 +18,7 @@ const skills = [
 
 export default function TechStack() {
   return (
-    <section id="skills" className="py-24 px-6 lg:px-24 bg-dark-card md:bg-transparent">
+    <section id="skills" className="py-24 px-6 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

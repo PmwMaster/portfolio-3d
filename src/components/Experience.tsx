@@ -32,7 +32,7 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-brand-yellow font-semibold tracking-wide uppercase text-sm mb-2">
+          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2">
             Experiência
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold text-white">
@@ -42,7 +42,7 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-800 md:-translate-x-px" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-slate-800 md:-translate-x-px" />
 
           {experiences.map((exp, i) => (
             <motion.div
@@ -51,7 +51,7 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: i * 0.15 }}
-              className={`relative flex items-start gap-6 mb-12 md:mb-16 ${
+              className={`relative flex items-start gap-6 mb-12 md:mb-16 pl-2 ${
                 i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >

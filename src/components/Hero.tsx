@@ -68,7 +68,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="lg:w-1/2 w-full h-[50vh] lg:h-[80vh] flex items-center justify-center relative mt-12 lg:mt-0 cursor-grab active:cursor-grabbing">
+      <div className="lg:w-1/2 w-full h-[35vh] sm:h-[45vh] lg:h-[80vh] flex items-center justify-center relative mt-8 lg:mt-0 cursor-grab active:cursor-grabbing">
         <div className="w-full h-full absolute inset-0">
           <RubiksCube />
         </div>

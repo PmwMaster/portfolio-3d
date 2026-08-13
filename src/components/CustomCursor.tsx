@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
+function getIsTouchDevice() {
+  if (typeof window === 'undefined') return false
+  return window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
+}
+
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 })
   const [isHovering, setIsHovering] = useState(false)
+  const [isTouch] = useState(getIsTouchDevice)
 
   useEffect(() => {
+    if (isTouch) return
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
       
       const target = e.target as HTMLElement
-      // Verify if the cursor is hovering any interactive element like A or BUTTON
       if (
         target.tagName.toLowerCase() === 'a' || 
         target.tagName.toLowerCase() === 'button' || 
@@ -31,7 +38,9 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', updateMousePosition)
       document.body.style.cursor = 'auto'
     }
-  }, [])
+  }, [isTouch])
+
+  if (isTouch) return null
 
   return (
     <>

@@ -19,7 +19,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
-          <h2 className="text-brand-yellow font-semibold tracking-wide uppercase text-sm mb-2">
+          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2">
             Sobre Mim
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
@@ -54,7 +54,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="lg:w-1/2 grid grid-cols-2 gap-4 w-full">
+        <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           {highlights.map((item, i) => (
             <motion.div
               key={item.label}

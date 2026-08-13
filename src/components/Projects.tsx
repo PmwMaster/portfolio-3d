@@ -51,7 +51,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-brand-blue font-semibold tracking-wide uppercase text-sm mb-2">
+          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2">
             Portfólio
           </h2>
           <h3 className="text-3xl lg:text-5xl font-bold text-white">
@@ -78,22 +78,24 @@ export default function Projects() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card/80 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center gap-4">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center gap-3 sm:gap-4">
                     <a
                       href={p.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-3 bg-dark-bg text-white border border-slate-700 rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all z-10"
+                      className="p-2.5 sm:p-3 bg-dark-bg text-white border border-slate-700 rounded-full opacity-70 sm:opacity-0 group-hover:opacity-100 hover:scale-110 transition-all z-10"
+                      aria-label={`Ver ${p.title} no GitHub`}
                     >
-                      <Github size={20} />
+                      <Github size={18} />
                     </a>
                     <a
                       href={p.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all z-10"
+                      className="p-2.5 sm:p-3 bg-white text-black rounded-full opacity-70 sm:opacity-0 group-hover:opacity-100 hover:scale-110 transition-all z-10"
+                      aria-label={`Abrir ${p.title}`}
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={18} />
                     </a>
                   </div>
                 </div>
