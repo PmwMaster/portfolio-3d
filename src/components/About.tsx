@@ -26,14 +26,31 @@ export default function About() {
             Construindo a web,{' '}
             <span className="text-gradient">um pixel por vez.</span>
           </h3>
-          <p className="text-slate-400 text-lg mb-6 leading-relaxed">
-            Sou um desenvolvedor full-stack apaixonado por criar experiências
-            ricas e interativas na web. Combino frameworks modernos de frontend
-            com arquitetura sólida de backend para entregar aplicações rápidas,
-            bonitas e escaláveis.
-          </p>
+
+          <div className="flex items-start gap-6 mb-6">
+            <div className="relative flex-shrink-0">
+              <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-brand-orange/30 shadow-lg shadow-brand-orange/10">
+                <img
+                  src="/cristiano.jpg"
+                  alt="Cristiano - Desenvolvedor Full-Stack"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-dark-bg" />
+            </div>
+            <div>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                Sou um desenvolvedor full-stack apaixonado por criar experiências
+                ricas e interativas na web. Combino frameworks modernos de frontend
+                com arquitetura sólida de backend para entregar aplicações rápidas,
+                bonitas e escaláveis.
+              </p>
+            </div>
+          </div>
+
           <p className="text-slate-500 text-base leading-relaxed">
-            Quando não estou programando, pode me encontrar explorando gráficos 3D,
+            Quando não estou programando, pode me encontrando explorando gráficos 3D,
             contribuindo com open source ou experimentando novas tecnologias.
           </p>
         </motion.div>

@@ -36,7 +36,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="flex flex-col gap-5"
           >
-            <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY || 'YOUR_WEB3FORMS_KEY'} />
+            <input type="hidden" name="access_key" value="e7e2d4a5-3665-4a08-84e0-cd3cc623ec79" />
             <input type="hidden" name="subject" value="Novo contato do portfólio" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
