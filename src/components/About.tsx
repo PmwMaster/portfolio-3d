@@ -29,11 +29,11 @@ export default function About() {
 
           <div className="flex flex-col items-center lg:items-start gap-6 mb-8">
             <div className="relative group">
-              <div className="w-40 h-40 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
+              <div className="w-56 h-64 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
                 <img
                   src="/cristiano.jpg"
                   alt="Cristiano - Desenvolvedor Full-Stack"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -54,7 +54,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+        <div className="lg:w-1/2 grid grid-cols-2 gap-4 w-full">
           {highlights.map((item, i) => (
             <motion.div
               key={item.label}
@@ -62,13 +62,13 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass p-8 rounded-3xl flex flex-col items-center text-center gap-3 transition-transform hover:-translate-y-2"
+              className="glass p-5 rounded-2xl flex flex-col items-center text-center gap-2 transition-transform hover:-translate-y-2"
             >
-              <div className="p-3 rounded-xl bg-brand-orange/10 text-brand-orange">
+              <div className="p-2.5 rounded-lg bg-brand-orange/10 text-brand-orange">
                 {item.icon}
               </div>
-              <h4 className="text-lg font-bold text-white">{item.label}</h4>
-              <p className="text-slate-400 text-sm">{item.desc}</p>
+              <h4 className="text-sm font-bold text-white">{item.label}</h4>
+              <p className="text-slate-400 text-xs">{item.desc}</p>
             </motion.div>
           ))}
         </div>
