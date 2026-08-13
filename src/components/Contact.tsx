@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, MapPin } from 'lucide-react'
+import { Mail, Github, Linkedin } from 'lucide-react'
 
 export default function Contact() {
   return (
@@ -37,6 +37,8 @@ export default function Contact() {
             className="flex flex-col gap-5"
           >
             <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY || 'YOUR_WEB3FORMS_KEY'} />
+            <input type="hidden" name="subject" value="Novo contato do portfólio" />
+            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
             <input
               type="text"
@@ -75,7 +77,7 @@ export default function Contact() {
             className="flex flex-col gap-6 justify-center"
           >
             <a
-              href="mailto:hello@cristiano.dev"
+              href="mailto:xaviernitrov@gmail.com"
               className="glass p-5 rounded-2xl border border-slate-800 hover:border-brand-orange/50 transition-all flex items-center gap-4 group"
             >
               <div className="p-3 rounded-xl bg-brand-orange/10 text-brand-orange group-hover:scale-110 transition-transform">
@@ -83,7 +85,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-slate-400 text-sm">Email</p>
-                <p className="text-white font-medium">hello@cristiano.dev</p>
+                <p className="text-white font-medium">xaviernitrov@gmail.com</p>
               </div>
             </a>
 
@@ -116,16 +118,6 @@ export default function Contact() {
                 <p className="text-white font-medium">Conecte-se comigo</p>
               </div>
             </a>
-
-            <div className="glass p-5 rounded-2xl border border-slate-800 flex items-center gap-4">
-              <div className="p-3 rounded-xl bg-green-500/10 text-green-400">
-                <MapPin size={22} />
-              </div>
-              <div>
-                <p className="text-slate-400 text-sm">Localização</p>
-                <p className="text-white font-medium">Disponível Worldwide</p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

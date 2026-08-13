@@ -55,7 +55,7 @@ function App() {
               <Linkedin size={18} />
             </a>
             <a
-              href="mailto:hello@cristiano.dev"
+              href="mailto:xaviernitrov@gmail.com"
               className="text-slate-500 hover:text-white transition-colors"
               aria-label="Email"
             >

@@ -9,6 +9,7 @@ const projects = [
     tags: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
     github: 'https://github.com/JoaoPOPaulino/SGI_ATI',
     live: 'https://sgi-ati.vercel.app',
+    image: '/projects/sgi.png',
     gradient: 'from-brand-orange/40 to-brand-yellow/20',
   },
   {
@@ -17,6 +18,7 @@ const projects = [
     tags: ['HTML', 'CSS', 'JavaScript', 'AOS'],
     github: 'https://github.com/PmwMaster/MarinsAdvocacia',
     live: 'http://drsandromarins.com.br',
+    image: '/projects/marins.png',
     gradient: 'from-brand-blue/40 to-purple-600/20',
   },
   {
@@ -25,6 +27,7 @@ const projects = [
     tags: ['React', 'TypeScript', 'Supabase', 'Stripe'],
     github: 'https://github.com/PmwMaster/Vortex',
     live: 'https://office-x-jet.vercel.app',
+    image: '/projects/vortex.png',
     gradient: 'from-green-500/30 to-brand-blue/20',
   },
   {
@@ -33,6 +36,7 @@ const projects = [
     tags: ['HTML', 'SCSS', 'JavaScript', 'Canvas API'],
     github: 'https://github.com/PmwMaster/HeroBurguer',
     live: 'https://pmwmaster.github.io/HeroBurguer/',
+    image: '/projects/heroburguer.png',
     gradient: 'from-red-500/30 to-brand-yellow/20',
   },
 ]
@@ -66,16 +70,20 @@ export default function Projects() {
               className="h-full"
             >
               <TiltCard className="bg-dark-card rounded-2xl overflow-hidden border border-slate-800 group h-full flex flex-col">
-                <div className={`h-48 bg-gradient-to-br ${p.gradient} relative flex items-center justify-center`}>
-                  <span className="text-4xl font-black text-white/10 tracking-widest select-none">
-                    {p.title.charAt(0)}
-                  </span>
+                <div className={`h-48 bg-gradient-to-br ${p.gradient} relative flex items-center justify-center overflow-hidden`}>
+                  <img
+                    src={p.image}
+                    alt={`Screenshot do projeto ${p.title}`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card/80 via-transparent to-transparent" />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center gap-4">
                     <a
                       href={p.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-3 bg-dark-bg text-white border border-slate-700 rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all"
+                      className="p-3 bg-dark-bg text-white border border-slate-700 rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all z-10"
                     >
                       <Github size={20} />
                     </a>
@@ -83,7 +91,7 @@ export default function Projects() {
                       href={p.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all"
+                      className="p-3 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 hover:scale-110 transition-all z-10"
                     >
                       <ExternalLink size={20} />
                     </a>
