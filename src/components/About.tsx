@@ -27,26 +27,25 @@ export default function About() {
             <span className="text-gradient">um pixel por vez.</span>
           </h3>
 
-          <div className="flex items-start gap-6 mb-6">
-            <div className="relative flex-shrink-0">
-              <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-brand-orange/30 shadow-lg shadow-brand-orange/10">
+          <div className="flex flex-col items-center lg:items-start gap-6 mb-8">
+            <div className="relative group">
+              <div className="w-40 h-40 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
                 <img
                   src="/cristiano.jpg"
                   alt="Cristiano - Desenvolvedor Full-Stack"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-dark-bg" />
+              <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 bg-green-500 rounded-full border-2 border-dark-bg shadow-lg shadow-green-500/30" />
             </div>
-            <div>
-              <p className="text-slate-400 text-lg leading-relaxed">
-                Sou um desenvolvedor full-stack apaixonado por criar experiências
-                ricas e interativas na web. Combino frameworks modernos de frontend
-                com arquitetura sólida de backend para entregar aplicações rápidas,
-                bonitas e escaláveis.
-              </p>
-            </div>
+
+            <p className="text-slate-400 text-lg leading-relaxed text-center lg:text-left">
+              Sou um desenvolvedor full-stack apaixonado por criar experiências
+              ricas e interativas na web. Combino frameworks modernos de frontend
+              com arquitetura sólida de backend para entregar aplicações rápidas,
+              bonitas e escaláveis.
+            </p>
           </div>
 
           <p className="text-slate-500 text-base leading-relaxed">
