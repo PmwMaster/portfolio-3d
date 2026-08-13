@@ -68,11 +68,13 @@ export default function Contact() {
           >
             <input type="hidden" name="access_key" value="e7e2d4a5-3665-4a08-84e0-cd3cc623ec79" />
             <input type="hidden" name="subject" value="Novo contato do portfólio" />
+            <input type="hidden" name="from_name" value="Portfólio Cristiano" />
+            <input type="hidden" name="replyto" value="email" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
             <input
               type="text"
-              name="name"
+              name="Nome"
               required
               placeholder="Seu Nome"
               disabled={status === 'loading'}
@@ -87,7 +89,7 @@ export default function Contact() {
               className="w-full bg-dark-bg/50 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange/30 transition-all disabled:opacity-50"
             />
             <textarea
-              name="message"
+              name="Mensagem"
               required
               rows={5}
               placeholder="Sua Mensagem..."
