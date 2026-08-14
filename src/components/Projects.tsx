@@ -9,7 +9,7 @@ const projects = [
     tags: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
     github: 'https://github.com/JoaoPOPaulino/SGI_ATI',
     live: 'https://sgi-ati.vercel.app',
-    image: '/projects/sgi.png',
+    image: 'projects/sgi.png',
     gradient: 'from-brand-orange/40 to-brand-yellow/20',
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     tags: ['HTML', 'CSS', 'JavaScript', 'AOS'],
     github: 'https://github.com/PmwMaster/MarinsAdvocacia',
     live: 'http://drsandromarins.com.br',
-    image: '/projects/marins.png',
+    image: 'projects/marins.png',
     gradient: 'from-brand-blue/40 to-purple-600/20',
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     tags: ['React', 'TypeScript', 'Supabase', 'Stripe'],
     github: 'https://github.com/PmwMaster/Vortex',
     live: 'https://office-x-jet.vercel.app',
-    image: '/projects/vortex.png',
+    image: 'projects/vortex.png',
     gradient: 'from-green-500/30 to-brand-blue/20',
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     tags: ['HTML', 'SCSS', 'JavaScript', 'Canvas API'],
     github: 'https://github.com/PmwMaster/HeroBurguer',
     live: 'https://pmwmaster.github.io/HeroBurguer/',
-    image: '/projects/heroburguer.png',
+    image: 'projects/heroburguer.png',
     gradient: 'from-red-500/30 to-brand-yellow/20',
   },
 ]

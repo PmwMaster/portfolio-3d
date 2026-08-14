@@ -31,7 +31,7 @@ export default function About() {
             <div className="relative group">
               <div className="w-56 h-64 lg:w-72 lg:h-80 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
                 <img
-                  src="/cristiano.jpg"
+                  src={`${import.meta.env.BASE_URL}cristiano.jpg`}
                   alt="Cristiano - Desenvolvedor Full-Stack"
                   className="w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   loading="lazy"
