@@ -37,7 +37,6 @@ export default function About() {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 bg-green-500 rounded-full border-2 border-dark-bg shadow-lg shadow-green-500/30" />
             </div>
 
             <div className="space-y-4 text-center">
