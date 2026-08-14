@@ -9,7 +9,7 @@ import CustomCursor from './components/CustomCursor'
 import ParticlesBackground from './components/ParticlesBackground'
 import ScrollProgress from './components/ScrollProgress'
 import ScrollToTop from './components/ScrollToTop'
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 function App() {
   return (
@@ -29,7 +29,8 @@ function App() {
       <Contact />
       <ScrollToTop />
 
-      <footer className="w-full py-10 px-6 border-t border-slate-800 bg-dark-bg">
+      <footer className="w-full py-10 px-6 relative bg-dark-bg">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-slate-500 text-sm">
             <p>&copy; {new Date().getFullYear()} Cristiano. Todos os direitos reservados.</p>
@@ -62,13 +63,6 @@ function App() {
               <Mail size={18} />
             </a>
           </div>
-
-          <a
-            href="#"
-            className="flex items-center gap-2 text-slate-500 hover:text-brand-orange transition-colors text-sm"
-          >
-            Voltar ao topo <ArrowUp size={14} />
-          </a>
         </div>
       </footer>
     </main>

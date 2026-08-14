@@ -19,15 +19,15 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
-          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2">
+          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2 text-center lg:text-left">
             Sobre Mim
           </h2>
-          <h3 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
+          <h3 className="text-3xl lg:text-5xl font-bold mb-8 text-white text-center lg:text-left">
             Construindo a web,{' '}
             <span className="text-gradient">um pixel por vez.</span>
           </h3>
 
-          <div className="flex flex-col items-center lg:items-start gap-6 mb-8">
+          <div className="flex flex-col items-center lg:items-start gap-6">
             <div className="relative group">
               <div className="w-56 h-64 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
                 <img
@@ -40,18 +40,19 @@ export default function About() {
               <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 bg-green-500 rounded-full border-2 border-dark-bg shadow-lg shadow-green-500/30" />
             </div>
 
-            <p className="text-slate-400 text-lg leading-relaxed text-center lg:text-left">
-              Sou um desenvolvedor full-stack apaixonado por criar experiências
-              ricas e interativas na web. Combino frameworks modernos de frontend
-              com arquitetura sólida de backend para entregar aplicações rápidas,
-              bonitas e escaláveis.
-            </p>
+            <div className="space-y-4 text-center lg:text-left">
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Sou um desenvolvedor full-stack apaixonado por criar experiências
+                ricas e interativas na web. Combino frameworks modernos de frontend
+                com arquitetura sólida de backend para entregar aplicações rápidas,
+                bonitas e escaláveis.
+              </p>
+              <p className="text-slate-500 text-base leading-relaxed">
+                Quando não estou programando, pode me encontrando explorando gráficos 3D,
+                contribuindo com open source ou experimentando novas tecnologias.
+              </p>
+            </div>
           </div>
-
-          <p className="text-slate-500 text-base leading-relaxed">
-            Quando não estou programando, pode me encontrando explorando gráficos 3D,
-            contribuindo com open source ou experimentando novas tecnologias.
-          </p>
         </motion.div>
 
         <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">

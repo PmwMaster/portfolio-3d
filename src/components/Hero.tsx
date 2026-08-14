@@ -26,7 +26,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-brand-orange to-brand-yellow text-black font-semibold hover:scale-105 transition-transform"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-semibold hover:scale-105 transition-transform"
             >
               Ver Projetos
             </a>
