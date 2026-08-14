@@ -19,17 +19,17 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
-          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2 text-center lg:text-left">
+          <h2 className="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-2 text-center">
             Sobre Mim
           </h2>
-          <h3 className="text-3xl lg:text-5xl font-bold mb-8 text-white text-center lg:text-left">
+          <h3 className="text-3xl lg:text-5xl font-bold mb-8 text-white text-center">
             Construindo a web,{' '}
             <span className="text-gradient">um pixel por vez.</span>
           </h3>
 
-          <div className="flex flex-col items-center lg:items-start gap-6">
+          <div className="flex flex-col items-center gap-6">
             <div className="relative group">
-              <div className="w-56 h-64 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
+              <div className="w-56 h-64 lg:w-72 lg:h-80 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-black/40">
                 <img
                   src="/cristiano.jpg"
                   alt="Cristiano - Desenvolvedor Full-Stack"
@@ -40,7 +40,7 @@ export default function About() {
               <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 bg-green-500 rounded-full border-2 border-dark-bg shadow-lg shadow-green-500/30" />
             </div>
 
-            <div className="space-y-4 text-center lg:text-left">
+            <div className="space-y-4 text-center">
               <p className="text-slate-300 text-lg leading-relaxed">
                 Sou um desenvolvedor full-stack apaixonado por criar experiências
                 ricas e interativas na web. Combino frameworks modernos de frontend
