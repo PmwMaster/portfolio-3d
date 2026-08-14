@@ -221,16 +221,12 @@ function DynamicLight() {
 
 export default function RubiksCube() {
   return (
-    <Suspense fallback={
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-brand-orange border-t-transparent rounded-full animate-spin" />
-      </div>
-    }>
-      <Canvas
-        shadows
-        camera={{ position: [5, 5, 5], fov: 45 }}
-        gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
-      >
+    <Canvas
+      shadows
+      camera={{ position: [5, 5, 5], fov: 45 }}
+      gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
+    >
+      <Suspense fallback={null}>
         <ambientLight intensity={0.6} />
         <directionalLight
           position={[10, 10, 5]}
@@ -261,7 +257,7 @@ export default function RubiksCube() {
         />
         <OrbitControls enableZoom={false} enablePan={false} />
         <RubiksGroup />
-      </Canvas>
-    </Suspense>
+      </Suspense>
+    </Canvas>
   )
 }
